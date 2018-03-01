@@ -4,8 +4,6 @@
 #include <functional>
 #include <boost/coroutine2/all.hpp>
 
-#include <iostream>
-
 // typeid without rtti
 using TYPE_INFO = void*;
 
