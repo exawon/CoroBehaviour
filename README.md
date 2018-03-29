@@ -78,7 +78,7 @@ class ExampleClass : public CoroBehaviour
 }
 ```
 
-## Integrate with Unreal Engine
+## Integration with Unreal Engine
 
 I'd like to rename `CoroBehaviour` to `ACoroActor` as coding convention of Unreal Engine,  
 and inherit `AActor` like below:
