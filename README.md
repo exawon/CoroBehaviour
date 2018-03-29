@@ -1,6 +1,6 @@
 # CoroBehaviour
 
-This is the coroutine class using C++ and [boost coroutine2](https://github.com/boostorg/coroutine2).  
+This is the coroutine class using C++ 11 and [boost coroutine2](https://github.com/boostorg/coroutine2).  
 Usage of `CoroBehaviour` is very similar with `MonoBehaviour` [Unity](https://unity3d.com/).  
 You may try to introduce this to the project of [Unreal Engine](https://www.unrealengine.com/).  
 
@@ -77,6 +77,27 @@ class ExampleClass : public CoroBehaviour
     }
 }
 ```
+
+## Integrate with Unreal Engine
+
+I'd like to rename `CoroBehaviour` to `ACoroActor` as coding convention of Unreal Engine,  
+and inherit `AActor` like below:
+
+```c++
+class ACoroActor : public AActor
+{
+    ...
+    virtual void Tick(float DeltaTime) override
+    {
+        Super::Tick(DeltaTime);
+        ResumeCoroutines();
+    }
+    ...
+};
+```
+
+Then, use `ACoroActor` instead of `AActor`.
+
 
 ## Disclaimer
 
